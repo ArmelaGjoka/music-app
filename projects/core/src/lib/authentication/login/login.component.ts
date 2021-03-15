@@ -38,7 +38,7 @@ export class LoginComponent {
             this.router.navigate(['/temp']);
         },
         error => {
-            console.log('Error: ', error.error.message);
+            console.log('Error: ', error);
             this.error = error;
         });
   }
