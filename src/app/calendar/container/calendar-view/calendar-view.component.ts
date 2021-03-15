@@ -14,24 +14,20 @@ export class CalendarViewComponent implements OnInit {
   public monthNumber: number;
   public year: number;
 
-  public weekDaysName = [];
+  public weekDaysName: string[];
 
-  selectedMonth: string = null;
-  selectedYear: string = null;
+  views = ['Monthly', 'Weekly'];
 
-  constructor(public calendarService: CalendarService) {}
+  selectedView = 'Monthly';
+
+
+  constructor(public calendarService: CalendarService) {
+      this.weekDaysName = this.calendarService.days;
+  }
 
   ngOnInit(): void {
 
     this.setMonthDays(this.calendarService.getCurrentMonth());
-
-    this.weekDaysName.push("Mo");
-    this.weekDaysName.push("Tu");
-    this.weekDaysName.push("We");
-    this.weekDaysName.push("Th");
-    this.weekDaysName.push("Fr");
-    this.weekDaysName.push("Sa");
-    this.weekDaysName.push("Su");
   }
 
   onNextMonth(): void {

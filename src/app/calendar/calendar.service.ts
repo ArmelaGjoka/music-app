@@ -4,6 +4,11 @@ import { Day } from "./models/day.model";
 
 @Injectable({providedIn: 'root'})
 export class CalendarService {
+
+  readonly months: Array<string> = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+  readonly days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su' ];
+
   private currentYear: number;
   private currentMonthIndex: number;
 
@@ -40,57 +45,11 @@ export class CalendarService {
   }
 
   public getMonthName(monthIndex: number): string {
-    switch (monthIndex) {
-      case 0:
-        return "January";      
-      case 1:
-        return "February";
-      case 2:
-        return "March";
-      case 3:
-        return "April";
-      case 4:
-        return "May";
-      case 5:
-        return "June";
-      case 6:
-        return "July";
-      case 7:
-        return "August";
-      case 8:
-        return "September";
-      case 9:
-        return "October";
-      case 10:
-        return "November";
-      case 11:
-        return "December";
-
-      default:
-        return "";
-    }
+    return this.months[monthIndex];
   }
 
-  public getWeekDayName(weekDay: number): string {
-    switch (weekDay) {
-      case 0:
-        return "Su"; // Sunday
-      case 1:
-        return "Mo"; // Monday
-      case 2:
-        return "Tu"; // Tuesday
-      case 3:
-        return "We"; // Wednesday
-      case 4:
-        return "Th"; // Thursday
-      case 5:
-        return "Fr"; // Friday
-      case 6:
-        return "Sa"; // Saturday
-
-      default:
-        return "";
-    }
+  public getWeekDayName(dayIndex: number): string {
+    return this.days[dayIndex];
   }
 
   private createDay(dayNumber: number, monthIndex: number, year: number) {

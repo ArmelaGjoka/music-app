@@ -3,17 +3,26 @@
   <button (click)="onPreviousMonth()"> Previous </button>
   <span> {{ calendarService.getMonthName(monthNumber) }} &nbsp; {{ year }} </span>
   <button (click)="onNextMonth()"> Next </button>
-  sele
+  <mat-form-field appearance="fill">
+    <mat-label>View</mat-label>
+    <mat-select [(ngModel)]="selectedView">
+      <mat-option *ngFor="let view of views" [value]="view">
+        {{view}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
 
 <br>
 
 <div class="calendar">
-  <span *ngFor='let weekDay of weekDaysName' class="day">
-    {{ weekDay }}
-  </span>
+  <ng-container *ngFor='let weekDay of weekDaysName'>
+    <button  mat-button class="day"> {{ weekDay }}</button>
+  </ng-container>
 
-  <span *ngFor='let day of monthDays' class="day">
-    {{ day.number }}
-  </span>
+  <ng-container *ngFor='let day of monthDays'>
+    <day-view
+        [day]="day.number"
+    ></day-view> 
+  </ng-container>
 </div>
