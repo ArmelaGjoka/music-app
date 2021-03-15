@@ -29,7 +29,7 @@ export class LoginComponent  {
         return;
     }
     const user = this.loginForm.value;
-
+    // FIXME: Remove the logic to app
     this.authService.login(user)
     .pipe(first())
     .subscribe(
