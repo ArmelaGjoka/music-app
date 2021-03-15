@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AuthenticationService } from '../authentication.service';
-import { User } from '../models/user.interface';
+import { AuthenticationService } from '../../authentication.service';
 
 @Component({
   selector: 'lib-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent  {
 
   loginForm: FormGroup;
 
@@ -47,5 +46,4 @@ export class LoginComponent {
      const control = this.loginForm.get(controlName);
      return control.touched && control.invalid;
   }
-
 }

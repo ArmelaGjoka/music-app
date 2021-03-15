@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthenticationGuard } from 'projects/core/src/lib/authentication';
-import { LoginComponent } from 'projects/core/src/lib/authentication/login/login.component';
+import { LoginComponent } from 'projects/authentication/src/lib/components/login/login.component';
+import { AuthenticationGuard } from 'projects/authentication/src/lib/guards/authentication.guard';
 import { CalendarViewComponent } from './calendar/container/calendar-view/calendar-view.component';
 
 

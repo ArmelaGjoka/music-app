@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from 'projects/core/src/lib/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarViewComponent } from './calendar/container/calendar-view/calendar-view.component';
+import { AuthenticationModule } from 'projects/authentication/src/public-api';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MockBackendInterceptor } from './mock-backend/mock-backend';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { CalendarViewComponent } from './calendar/container/calendar-view/calend
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
+    AuthenticationModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: MockBackendInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,6 +24,12 @@
       ],
       "core/*": [
         "dist/core/*"
+      ],
+      "authentication": [
+        "dist/authentication"
+      ],
+      "authentication/*": [
+        "dist/authentication/*"
       ]
     }
   },
