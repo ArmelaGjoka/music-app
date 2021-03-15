@@ -5,12 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from 'projects/core/src/lib/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TempCompComponent } from './temp-comp/temp-comp.component';
+import { CalendarViewComponent } from './calendar/container/calendar-view/calendar-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TempCompComponent
+    CalendarViewComponent
   ],
   imports: [
     BrowserModule,

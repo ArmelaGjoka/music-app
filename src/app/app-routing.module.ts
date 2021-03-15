@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthenticationGuard } from 'projects/core/src/lib/authentication';
 import { LoginComponent } from 'projects/core/src/lib/authentication/login/login.component';
-import { TempCompComponent } from './temp-comp/temp-comp.component';
+import { CalendarViewComponent } from './calendar/container/calendar-view/calendar-view.component';
 
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'temp', component: TempCompComponent, canActivate: [AuthenticationGuard]}
+  {path: 'temp', component: CalendarViewComponent, canActivate: [AuthenticationGuard]}
 ];
 
 @NgModule({

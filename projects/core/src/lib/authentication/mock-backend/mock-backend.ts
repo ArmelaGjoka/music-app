@@ -1,4 +1,4 @@
-import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of, throwError } from "rxjs";
 import { User } from "../models/user.interface";
@@ -8,14 +8,10 @@ const users: User[] = [{ id: 1, username: 'admin', password: 'admin' }, {id: 2, 
 @Injectable()
 export class MockBackendInterceptor implements HttpInterceptor {
 
-    constructor(private http: HttpClient) {}
+    constructor() {}
 
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<User>> {
-         return this.handleRoute(request, next);
-    }
-
-    private handleRoute = (request: HttpRequest<User>, next: HttpHandler) => {
         const { url, method, body } = request;
         if (url.endsWith('/users/authenticate') && method === 'POST') {
               return this.authenticate(body);
