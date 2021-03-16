@@ -12,11 +12,11 @@ export class SongsDialogComponent {
 
   @Output() deleteSongByIndex = new EventEmitter<number>();
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Song[]) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {songs: Song[], day: Date}) {
   }
 
   drop(event: CdkDragDrop<string[]>): void {
-    moveItemInArray(this.data, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.data.songs, event.previousIndex, event.currentIndex);
   }
 
   delete(index: number): void {

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Song } from '../../models/song.model';
@@ -11,9 +11,9 @@ import { SongsDialogComponent } from '../songs-dialog/songs-dialog.component';
   templateUrl: './day-view.component.html',
   styleUrls: ['./day-view.component.scss']
 })
-export class DayViewComponent implements OnInit, OnDestroy {
+export class DayViewComponent implements OnInit {
 
-  @Input() day: number;
+  @Input() day: Date;
 
   @Input() disabled: boolean;
 
@@ -31,18 +31,17 @@ export class DayViewComponent implements OnInit, OnDestroy {
 
   openSongsDialog(): void {
     this.subscription = this.dialog.open(SongsDialogComponent, {
-      data: !this.songs ? [] : this.songs
+      data: {
+        songs: !this.songs ? [] : this.songs,
+        day: this.day
+      }
+
     }).componentInstance.deleteSongByIndex.
       subscribe((id: number) => this.deleteSong.emit(id));
 
       this.dialog.afterAllClosed.pipe(
         tap(n => this.subscription.unsubscribe())
       )
-  }
-
-
-  ngOnDestroy() {
-   // this.subscription?.unsubscribe();
   }
 
 }

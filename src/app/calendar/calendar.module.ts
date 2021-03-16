@@ -1,9 +1,10 @@
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatButtonModule, MatDialogModule, MatIconModule, MatListModule, MatSelectModule } from "@angular/material";
-import { SharedModule } from "projects/shared/src/public-api";
+import { SharedModule } from "shared";
 import { CalendarRoutingModule } from "./calendar-routing.module";
 import { DayViewComponent } from "./components/day-view/day-view.component";
 import { SongsDialogComponent } from "./components/songs-dialog/songs-dialog.component";
@@ -26,7 +27,8 @@ import { CalendarViewComponent } from "./container/calendar-view/calendar-view.c
         MatDialogModule,
         DragDropModule,
         SharedModule,
-        MatListModule
+        MatListModule,
+        HttpClientModule
     ],
     entryComponents: [SongsDialogComponent]
 })

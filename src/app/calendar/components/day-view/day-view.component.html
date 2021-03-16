@@ -4,6 +4,5 @@
     (click)="openSongsDialog()"
     >
     <mat-icon *ngIf="songs">music_note</mat-icon>
-    <mat-icon *ngIf="!songs">hourglass_empty</mat-icon>
-    {{day}}
+    {{day | date: 'd'}}
 </button>

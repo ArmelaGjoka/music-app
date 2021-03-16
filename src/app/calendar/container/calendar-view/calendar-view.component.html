@@ -1,8 +1,8 @@
-<div style="width: 100%;">
+
    <div  fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px" class="row-container">
       <div>
          <button mat-icon-button (click)="update(-1)">&lt;</button>
-         <strong>{{firstDate | date}}</strong>
+         <strong>{{firstDate | date:'MMMM yyyy'}}</strong>
       <button mat-icon-button (click)="update(+1)">&gt;</button>
       </div>
          <mat-form-field>
@@ -16,17 +16,16 @@
    </div>
    
    <mat-list>
-      <li class="days" *ngFor="let day of days"> {{day}} </li>
+      <li *ngFor="let day of days"> {{day}} </li>
       <li *ngFor="let date of dates">
          <day-view
-            [day]="date | date:'d'"
+            [day]="date"
             [disabled]="!isSameView(date)"
             [songs]="getSongsByDate(date)"
             (deleteSong)="deleteSong($event, date)"
          ></day-view>
       </li>
    </mat-list>
-</div>
 
 
 

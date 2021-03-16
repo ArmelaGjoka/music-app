@@ -1,10 +1,10 @@
 
-<h1 mat-dialog-title>Songs released</h1>
+<h1 mat-dialog-title>Songs released on {{data.day | date:'dd MMMM y'}}</h1>
 
 
-<div class="container" *ngIf="data && data.length > 0; else noSongsBlock">
+<div class="container" *ngIf="data && data.songs.length > 0; else noSongsBlock">
   <div mat-dialog-content cdkDropList class="song-list" (cdkDropListDropped)="drop($event)">
-    <div class="song-box" *ngFor="let song of data; index as index" cdkDrag>
+    <div class="song-box" *ngFor="let song of data.songs; index as index" cdkDrag>
       <div fxLayout="row" fxLayoutAlign="space-around center" class="song-custom-placeholder" *cdkDragPlaceholder></div>
         <div fxLayout="column" fxLayoutAlign="space-around center">
           <div><strong>{{song.title}}</strong></div>
