@@ -6,9 +6,9 @@ describe('ConcatPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('transforms [a. b] to "a feat b"', () => {
+  it('transforms [a, b] to "a feat b"', () => {
     const pipe = new ConcatPipe();
-    expect(pipe.transform(['a', 'b'], 'feat')).toBe('a feat b');
+    expect(pipe.transform(['a', 'b'], ' feat')).toBe('a feat b');
   });
 
   it('transforms [a. b] to "a, b"', () => {
@@ -18,7 +18,7 @@ describe('ConcatPipe', () => {
 
   it('transforms [a] to "a"', () => {
     const pipe = new ConcatPipe();
-    expect(pipe.transform(['a', 'feat'])).toBe('a');
+    expect(pipe.transform(['a'], ' sep')).toBe('a');
   });
 
 });
