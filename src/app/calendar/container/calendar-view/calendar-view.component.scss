@@ -12,6 +12,7 @@ ul {
    margin: 0; 
    padding: 0;
    list-style: none;
+   width: 100%;
   }
 
 li {
@@ -19,7 +20,6 @@ li {
   border: 1px solid #ccc;
   width: calc(100%/7 - 2px);
   text-align: center;
-  cursor: pointer;
 }
 
 li.days {
