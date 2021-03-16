@@ -1,6 +1,5 @@
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatButtonModule, MatDialogModule, MatIconModule, MatListModule, MatSelectModule } from "@angular/material";
@@ -26,7 +25,8 @@ import { CalendarViewComponent } from "./container/calendar-view/calendar-view.c
         MatIconModule,
         MatDialogModule,
         DragDropModule,
-        SharedModule
+        SharedModule,
+        MatListModule
     ],
     entryComponents: [SongsDialogComponent]
 })

@@ -1,5 +1,13 @@
 
 
+.row-container {
+  list-style: none;
+  display: flex; 
+  flex-flow: wrap;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
 ul {
    margin: 0; 
    padding: 0;

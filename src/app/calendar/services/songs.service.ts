@@ -39,6 +39,6 @@ export class SongsService {
 
     deleteSong(index: number, date: Date): void {
         const dateString = date.getFullYear() + "-" + this.numberToString(date.getMonth() + 1) + "-" + this.numberToString(date.getDate());
-        this.songsData[dateString].splice(index);
+        this.songsData[dateString].splice(index, 1);
     }
 }
