@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:libs": "ng build authentication && ng build shared",
-    "test": "ng test",
+    "test": "ng test && ng test shared",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule, MAT_DIALOG_DATA } from '@angular/material';
+import { SharedModule } from 'shared';
 
 import { SongsDialogComponent } from './songs-dialog.component';
 
@@ -8,7 +10,17 @@ describe('SongsDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SongsDialogComponent ]
+      declarations: [ SongsDialogComponent ],
+      imports: [SharedModule, MatIconModule],
+      providers: [
+        {
+          provide: MAT_DIALOG_DATA,
+          useValue: {
+            songs: [],
+            day: new Date()
+          }
+        }
+      ]
     })
     .compileComponents();
   }));
