@@ -26,4 +26,8 @@ export class AuthenticationService {
     getLoggedUser(): User {
         return JSON.parse(localStorage.getItem('musicUser'));
     }
+
+    isUserAuthenticated(): boolean {
+      return !!localStorage.getItem('musicUser');
+    }
 }

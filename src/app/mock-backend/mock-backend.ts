@@ -39,12 +39,4 @@ export class MockBackendInterceptor implements HttpInterceptor {
     private error = (message: string) => {
         return throwError({ error: { message } });
     }
-
-    private unauthorized = () => {
-        return throwError({ status: 401, error: { message: 'Unauthorised' } });
-    }
-
-    private isLoggedIn = (headers) => {
-        return headers.get('Authorization') === 'Bearer music-token';
-    }
 }

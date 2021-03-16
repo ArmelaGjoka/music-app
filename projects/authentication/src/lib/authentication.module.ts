@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import {MatCardModule} from '@angular/material/card';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -21,11 +22,15 @@ import {MatCardModule} from '@angular/material/card';
       MatCardModule
   ],
   declarations: [
-      LoginComponent
+      LoginComponent,
+      LogoutComponent
   ],
   providers: [
       { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
+  exports: [
+    LogoutComponent
   ]
 })
 export class AuthenticationModule {

@@ -1,15 +1,15 @@
   .spacer {
-    flex: 1;
+    flex-grow: 1;
   }
 
   .toolbar {
     height: 60px;
-    margin: -8px;
     display: flex;
     align-items: center;
     background-color: #1976d2;
     color: white;
     font-weight: 600;
+    padding-right: 30px;
   }
 
   .toolbar img {

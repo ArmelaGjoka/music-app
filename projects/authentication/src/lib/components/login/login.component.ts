@@ -19,7 +19,8 @@ export class LoginComponent  {
       private authService: AuthenticationService,
       private router: Router,
       @Inject('config') private config: string) {
-    this.loginForm = new FormGroup({
+    
+        this.loginForm = new FormGroup({
         username: new FormControl(null, Validators.required),
         password: new FormControl(null, Validators.required)
     });

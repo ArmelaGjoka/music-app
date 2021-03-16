@@ -18,7 +18,7 @@ export class CalendarService {
       }
     
     private getCalendarWeeklyDays(date: Date): Date[] {
-        const startTime =  new Date(date.valueOf()).getTime();
+        const startTime =  date.getTime() - DAY_MS * date.getDay();
         return this.range(0, 6).map(num => new Date(startTime + DAY_MS * num));
       }
     

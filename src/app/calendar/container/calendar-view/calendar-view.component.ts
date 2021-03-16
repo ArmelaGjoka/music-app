@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CALENDAR_VIEWS, DAY_MS, WEEK_DAYS } from '../../calendar.constant';
 import { Song } from '../../models/song.model';
 import { CalendarService } from '../../services/calendar.service';
@@ -12,8 +12,8 @@ import { SongsService } from '../../services/songs.service';
 })
 export class CalendarViewComponent {
 
-  // The first day of week or month being shown
-  firstDate: Date;
+  // Date contained in currently viewed month or week
+  anchorDate: Date;
 
   // The dates of week or month being shown
   dates: Array<Date>;
@@ -32,20 +32,20 @@ export class CalendarViewComponent {
     this.update(0, new Date());
   }
 
-  update(offset = 0, refDate = this.firstDate): void {
+  update(offset = 0, anchor = this.anchorDate): void {
     if (this.selectedView === CALENDAR_VIEWS.MONTHLY) {
-      this.firstDate = new Date(refDate.getFullYear(), refDate.getMonth() + offset, 1);
+      this.anchorDate = new Date(anchor.getFullYear(), anchor.getMonth() + offset, Math.min(28, anchor.getDate()));
     } else {
-      const daysOffset = refDate.getDay() - offset * 7;
-      this.firstDate = new Date(refDate.getTime() - DAY_MS * daysOffset);
+      this.anchorDate = new Date(anchor.getTime() + DAY_MS * 7 * offset);
     }
 
-    this.dates = this.calendarService.getViewDays(this.selectedView, this.firstDate);
+    this.dates = this.calendarService.getViewDays(this.selectedView, this.anchorDate);
   }
 
 
+  // Display dates outside the selected month as disabled
   isSameView(date: Date): boolean {
-    return date.getMonth() === this.firstDate.getMonth() || this.selectedView == CALENDAR_VIEWS.WEEKLY;
+    return date.getMonth() === this.anchorDate.getMonth() || this.selectedView == CALENDAR_VIEWS.WEEKLY;
   }
 
 
