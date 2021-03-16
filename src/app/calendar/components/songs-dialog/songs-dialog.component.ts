@@ -11,7 +11,6 @@ import { Song } from '../../models/song.model';
 export class SongsDialogComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: Song[]) {
-    console.log('Dialog data: ', data);
   }
 
   drop(event: CdkDragDrop<string[]>): void {

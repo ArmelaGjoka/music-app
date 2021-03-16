@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SongsDialogComponent } from './calendar/components/songs-dialog/songs-dialog.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FormsModule,
     MatIconModule,
     MatDialogModule,
-    DragDropModule
+    DragDropModule,
+    MatListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: MockBackendInterceptor, multi: true},

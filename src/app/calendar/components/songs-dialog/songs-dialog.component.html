@@ -1,12 +1,19 @@
+
+<h1 mat-dialog-title>Songs released</h1>
 <ng-container *ngIf="data.length == 0">
     No song was released on this day!
 </ng-container>
 <ng-container *ngIf="data && data.length > 0">
     <div mat-dialog-content cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let song of data; index as index" cdkDrag>
+        <mat-list-item class="example-box" *ngFor="let song of data; index as index" cdkDrag>
           <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-          Title : {{song.title}} Artist: {{song.artists[0]}}
-          <button mat-icon-button (click)="delete(index)"><mat-icon>delete</mat-icon></button>
-        </div>
+            <div mat-line>{{song.title}}
+              <button mat-icon-button (click)="delete(index)"><mat-icon>delete</mat-icon></button>
+            </div>
+           <div
+            *ngFor="let artist of song.artists"
+            mat-line
+           >{{artist}}</div>
+        </mat-list-item>
       </div>
 </ng-container>

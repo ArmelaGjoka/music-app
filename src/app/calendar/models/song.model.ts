@@ -1,6 +1,6 @@
 
 export interface Song {
-    artist: string[],
+    artists: string[],
     title: string,
     release_date: number
 }
