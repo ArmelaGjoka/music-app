@@ -13,7 +13,6 @@ export class CalendarService {
     private getCalendarMonthlyDays(date: Date): Date[] {
         const startDay = this.getCalendarStartDay(date);
         const startTime =  new Date(startDay.valueOf()).getTime();
-    
         return this.range(0, 34).map(num => new Date(startTime + DAY_MS * num));
       }
     

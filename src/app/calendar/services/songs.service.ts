@@ -8,12 +8,13 @@ import { Song } from "../models/song.model";
 @Injectable({providedIn: 'root'})
 export class SongsService {
 
+    // Save 100 songs in a key value structure for O(1) access
     songsData: { [date: string]: Song[]} = {};
 
     constructor(private http: HttpClient) {
     }
 
-    getSongs() {
+    getSongs(): void {
         this.http.get<Song[]>(SONGS_ENDPOINT).pipe(    
             catchError(e => throwError(e)
           )  
@@ -25,20 +26,22 @@ export class SongsService {
                     }
                     this.songsData[stringDate] = [...this.songsData[stringDate], song];
                 });
-               // console.log('Result: ', this.songsData);
     })}
 
     getSongsByDate(date: Date): Song[] | null { 
-        const dateString = date.getFullYear() + "-" + this.numberToString(date.getMonth() + 1) + "-" + this.numberToString(date.getDate());
-        return this.songsData[dateString];
+        return this.songsData[this.dateToString(date)];
+    }
+
+    deleteSong(index: number, date: Date): void {
+        const dateString = this.dateToString(date);
+        this.songsData[dateString].splice(index, 1);
+    }
+
+    private dateToString(date: Date): string {
+        return date.getFullYear() + "-" + this.numberToString(date.getMonth() + 1) + "-" + this.numberToString(date.getDate());
     }
 
     private numberToString(value: number): string {
         return value / 10 >= 1 ? value.toString() : '0' + value;
-    }
-
-    deleteSong(index: number, date: Date): void {
-        const dateString = date.getFullYear() + "-" + this.numberToString(date.getMonth() + 1) + "-" + this.numberToString(date.getDate());
-        this.songsData[dateString].splice(index, 1);
     }
 }
