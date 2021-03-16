@@ -1,3 +1,7 @@
 
 
-<button mat-stroked-button class="day-button">{{day}}</button>
+<button mat-button class="day-button" [disabled]="disabled" 
+    (click)="openSongsDialog()"
+    ><mat-icon *ngIf="songs">music_note</mat-icon>
+    {{day}}
+</button>

@@ -12,12 +12,17 @@ import { DayViewComponent } from './calendar/components/day-view/day-view.compon
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SongsDialogComponent } from './calendar/components/songs-dialog/songs-dialog.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarViewComponent,
-    DayViewComponent
+    DayViewComponent,
+    SongsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,11 +31,15 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatButtonModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatDialogModule,
+    DragDropModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: MockBackendInterceptor, multi: true},
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SongsDialogComponent]
 })
 export class AppModule { }

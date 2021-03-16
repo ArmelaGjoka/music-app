@@ -1,6 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
-import { CalendarService } from '../../calendar.service';
-import { Day } from '../../models/day.model';
+import { DAY_MS, WEEK_DAYS } from '../../calendar.constant';
+import { SongsService } from '../../services/songs.service';
 
 @Component({
   selector: 'app-calendar-view',
@@ -9,53 +10,53 @@ import { Day } from '../../models/day.model';
 })
 export class CalendarViewComponent implements OnInit {
 
-  public monthDays: Day[];
+  dates: Array<Date> = [];
 
-  public monthNumber: number;
-  public year: number;
-
-  public weekDaysName: string[];
+  date = new Date();
 
   views = ['Monthly', 'Weekly'];
+
+  days = WEEK_DAYS;
 
   selectedView = 'Monthly';
 
 
-  constructor(public calendarService: CalendarService) {
-      this.weekDaysName = this.calendarService.days;
+  constructor(private songsService: SongsService) {
+    this.songsService.getSongs();
+    this.dates = this.getCalendarDays(this.date);
   }
 
   ngOnInit(): void {
-
-    this.setMonthDays(this.calendarService.getCurrentMonth());
   }
 
-  onNextMonth(): void {
-    this.monthNumber++;
-
-    if (this.monthNumber == 13) {
-      this.monthNumber = 1;
-      this.year++;
-    }
-
-    this.setMonthDays(this.calendarService.getMonth(this.monthNumber, this.year));
+  setMonth(inc: number): void {
+    const [year, month] = [this.date.getFullYear(), this.date.getMonth()];
+    this.date = new Date(year, month + inc, 1);
+    this.dates = this.getCalendarDays(this.date);
+  }
+  
+  isSameMonth(date: Date): boolean {
+    return date.getMonth() === this.date.getMonth();
   }
 
-  onPreviousMonth() : void{
-    this.monthNumber--;
+  private getCalendarDays(date: Date) {
+    const calendarStartTime =  this.getCalendarStartDay(date).getTime();
 
-    if (this.monthNumber < 1) {
-      this.monthNumber = 12;
-      this.year--;
-    }
-
-    this.setMonthDays(this.calendarService.getMonth(this.monthNumber, this.year));
+    return this.range(0, 41)
+      .map(num => new Date(calendarStartTime + DAY_MS * num));
   }
 
-  private setMonthDays(days: Day[]): void {
-    this.monthDays = days;
-    this.monthNumber = this.monthDays[0].monthIndex;
-    this.year = this.monthDays[0].year;
+  private getCalendarStartDay(date: Date): Date {
+    const [year, month] = [date.getFullYear(), date.getMonth()];
+    const firstDayOfMonth = new Date(year, month, 1).getTime();
+
+    return this.range(1,7)
+      .map(num => new Date(firstDayOfMonth - DAY_MS * num))
+      .find(dt => dt.getDay() === 0)
+  }
+
+  private range(start, end, length = end - start + 1) {
+    return Array.from({ length }, (_, i) => start + i)
   }
 
 }

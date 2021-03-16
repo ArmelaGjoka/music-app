@@ -1,0 +1,492 @@
+[
+  {
+    "artists": "Olivia Rodrigo, Ed Sheeran",
+    "release_date": "2021-03-05",
+    "title": "Drivers License"
+  },
+  {
+    "artists": "Kali Uchis",
+    "release_date": "2021-03-06",
+    "title": "Telepatía"
+  },
+  {
+    "artists": "The Weeknd, Beyonce",
+    "release_date": "2021-03-06",
+    "title": "Save Your Tears"
+  },
+  {
+    "artists": "Masked Wolf",
+    "release_date": "2021-03-06",
+    "title": "Astronaut In The Ocean"
+  },
+  {
+    "artists": "Bad Bunny",
+    "release_date": "2021-03-06",
+    "title": "Dákiti"
+  },
+  {
+    "artists": "The Weeknd",
+    "release_date": "2021-03-10",
+    "title": "Blinding Lights"
+  },
+  {
+    "artists": "Bruno Mars",
+    "release_date": "2021-03-11",
+    "title": "Leave The Door Open"
+  },
+  {
+    "artists": "Giveon",
+    "release_date": "2021-03-12",
+    "title": "Heartbreak Anniversary"
+  },
+  {
+    "artists": "Lil Tjay",
+    "release_date": "2021-03-13",
+    "title": "Calling My Phone"
+  },
+  {
+    "artists": "Myke Towers",
+    "release_date": "2021-03-14",
+    "title": "Bandido"
+  },
+  {
+    "artists": "ROSÉ",
+    "release_date": "2021-03-15",
+    "title": "On The Ground"
+  },
+  {
+    "artists": "Justin Bieber",
+    "release_date": "2021-03-05",
+    "title": "Hold On"
+  },
+  {
+    "artists": "Doja Cat",
+    "release_date": "2021-02-28",
+    "title": "Streets"
+  },
+  {
+    "artists": "Tiësto",
+    "release_date": "2021-03-09",
+    "title": "The Business"
+  },
+  {
+    "artists": "24kGoldn",
+    "release_date": "2021-03-04",
+    "title": "Mood (Feat. Iann Dior)"
+  },
+  {
+    "artists": "Drake",
+    "release_date": "2021-03-02",
+    "title": "What’S Next"
+  },
+  {
+    "artists": "The Kid LAROI",
+    "release_date": "2021-03-08",
+    "title": "Without You"
+  },
+  {
+    "artists": "BTS",
+    "release_date": "2021-03-01",
+    "title": "Dynamite"
+  },
+  {
+    "artists": "Bad Bunny",
+    "release_date": "2021-02-28",
+    "title": "La Noche De Anoche"
+  },
+  {
+    "artists": "Cardi B",
+    "release_date": "2021-02-11",
+    "title": "Up"
+  },
+  {
+    "artists": "Rochy RD",
+    "release_date": "2021-02-11",
+    "title": "Ella No Es Tuya - Remix"
+  },
+  {
+    "artists": "Selena Gomez",
+    "release_date": "2021-02-11",
+    "title": "Baila Conmigo (With Rauw Alejandro)"
+  },
+  {
+    "artists": "Dua Lipa",
+    "release_date": "2021-02-19",
+    "title": "Levitating (Feat. Dababy)"
+  },
+  {
+    "artists": "KAROL G",
+    "release_date": "2021-02-12",
+    "title": "Bichota"
+  },
+  {
+    "artists": "ROSÉ",
+    "release_date": "2021-03-19",
+    "title": "Gone"
+  },
+  {
+    "artists": "Drake",
+    "release_date": "2021-02-12",
+    "title": "Wants And Needs (Feat. Lil Baby)"
+  },
+  {
+    "artists": "SZA",
+    "release_date": "2021-02-12",
+    "title": "Good Days"
+  },
+  {
+    "artists": "CJ",
+    "release_date": "2021-02-10",
+    "title": "Whoopty"
+  },
+  {
+    "artists": "Ariana Grande",
+    "release_date": "2021-02-11",
+    "title": "Positions"
+  },
+  {
+    "artists": "Duncan Laurence",
+    "release_date": "2021-02-12",
+    "title": "Arcade"
+  },
+  {
+    "artists": "Boza",
+    "release_date": "2021-02-13",
+    "title": "Hecha Pa' Mi"
+  },
+  {
+    "artists": "Riton",
+    "release_date": "2021-02-14",
+    "title": "Friday (Feat. Mufasa & Hypeman) - Dopamine Re-Edit"
+  },
+  {
+    "artists": "Lewis Capaldi",
+    "release_date": "2021-02-15",
+    "title": "Someone You Loved"
+  },
+  {
+    "artists": "Nathan Evans",
+    "release_date": "2021-02-16",
+    "title": "Wellerman - Sea Shanty / 220 Kid X Billen Ted Remix"
+  },
+  {
+    "artists": "Harry Styles",
+    "release_date": "2021-02-17",
+    "title": "Watermelon Sugar"
+  },
+  {
+    "artists": "Glass Animals",
+    "release_date": "2021-02-18",
+    "title": "Heat Waves"
+  },
+  {
+    "artists": "Ariana Grande",
+    "release_date": "2021-02-19",
+    "title": "34+35"
+  },
+  {
+    "artists": "Dua Lipa",
+    "release_date": "2021-02-20",
+    "title": "We'Re Good"
+  },
+  {
+    "artists": "Internet Money",
+    "release_date": "2021-02-21",
+    "title": "Lemonade (Feat. Gunna, Don Toliver & Nav)"
+  },
+  {
+    "artists": "Tate McRae",
+    "release_date": "2021-04-13",
+    "title": "You Broke Me First"
+  },
+  {
+    "artists": "Travis Scott",
+    "release_date": "2021-04-14",
+    "title": "Goosebumps - Remix"
+  },
+  {
+    "artists": "Justin Bieber",
+    "release_date": "2021-04-15",
+    "title": "Anyone"
+  },
+  {
+    "artists": "MEDUZA",
+    "release_date": "2021-04-16",
+    "title": "Paradise (Feat. Dermot Kennedy)"
+  },
+  {
+    "artists": "Pop Smoke",
+    "release_date": "2021-03-05",
+    "title": "What You Know Bout Love"
+  },
+  {
+    "artists": "ATB",
+    "release_date": "2021-03-06",
+    "title": "Your Love (9Pm)"
+  },
+  {
+    "artists": "DaBaby",
+    "release_date": "2021-03-06",
+    "title": "Rockstar (Feat. Roddy Ricch)"
+  },
+  {
+    "artists": "Israel & Rodolffo",
+    "release_date": "2021-03-06",
+    "title": "Batom De Cereja - Ao Vivo"
+  },
+  {
+    "artists": "Black Eyed Peas",
+    "release_date": "2021-03-06",
+    "title": "Girl Like Me"
+  },
+  {
+    "artists": "The Neighbourhood",
+    "release_date": "2021-03-10",
+    "title": "Sweater Weather"
+  },
+  {
+    "artists": "ElyOtto",
+    "release_date": "2021-03-11",
+    "title": "Sugarcrash!"
+  },
+  {
+    "artists": "Maluma",
+    "release_date": "2021-03-12",
+    "title": "Hawái"
+  },
+  {
+    "artists": "Joel Corry",
+    "release_date": "2021-03-13",
+    "title": "Head & Heart (Feat. Mnek)"
+  },
+  {
+    "artists": "Rauw Alejandro",
+    "release_date": "2021-03-14",
+    "title": "Reloj"
+  },
+  {
+    "artists": "Billie Eilish",
+    "release_date": "2021-03-15",
+    "title": "Therefore I Am"
+  },
+  {
+    "artists": "Tones And I",
+    "release_date": "2021-03-05",
+    "title": "Dance Monkey"
+  },
+  {
+    "artists": "Sech",
+    "release_date": "2021-02-28",
+    "title": 911
+  },
+  {
+    "artists": "Cardi B",
+    "release_date": "2021-03-09",
+    "title": "Wap (Feat. Megan Thee Stallion)"
+  },
+  {
+    "artists": "Dua Lipa",
+    "release_date": "2021-03-04",
+    "title": "Don'T Start Now"
+  },
+  {
+    "artists": "Los Legendarios",
+    "release_date": "2021-03-02",
+    "title": "Fiel"
+  },
+  {
+    "artists": "Raí Saia Rodada",
+    "release_date": "2021-03-08",
+    "title": "Tapão Na Raba"
+  },
+  {
+    "artists": "Saweetie",
+    "release_date": "2021-03-01",
+    "title": "Best Friend (Feat. Doja Cat)"
+  },
+  {
+    "artists": "Miley Cyrus",
+    "release_date": "2021-02-28",
+    "title": "Prisoner (Feat. Dua Lipa)"
+  },
+  {
+    "artists": "Lewis Capaldi",
+    "release_date": "2021-02-11",
+    "title": "Before You Go"
+  },
+  {
+    "artists": "Conan Gray",
+    "release_date": "2021-02-11",
+    "title": "Heather"
+  },
+  {
+    "artists": "SAINt JHN",
+    "release_date": "2021-02-11",
+    "title": "Roses - Imanbek Remix"
+  },
+  {
+    "artists": "Drake",
+    "release_date": "2021-02-19",
+    "title": "Lemon Pepper Freestyle (Feat. Rick Ross)"
+  },
+  {
+    "artists": "Manuel Turizo",
+    "release_date": "2021-02-12",
+    "title": "La Nota"
+  },
+  {
+    "artists": "Wesley Safadão",
+    "release_date": "2021-03-19",
+    "title": "Ele É Ele, Eu Sou Eu"
+  },
+  {
+    "artists": "Ava Max",
+    "release_date": "2021-02-12",
+    "title": "My Head & My Heart"
+  },
+  {
+    "artists": "Billie Eilish",
+    "release_date": "2021-02-12",
+    "title": "Lovely (With Khalid)"
+  },
+  {
+    "artists": "Pop Smoke",
+    "release_date": "2021-02-10",
+    "title": "For The Night (Feat. Lil Baby & Dababy)"
+  },
+  {
+    "artists": "Pink Sweat$",
+    "release_date": "2021-02-11",
+    "title": "At My Worst"
+  },
+  {
+    "artists": "Milly",
+    "release_date": "2021-02-12",
+    "title": "No Te Enamores - Remix"
+  },
+  {
+    "artists": "Post Malone",
+    "release_date": "2021-02-13",
+    "title": "Circles"
+  },
+  {
+    "artists": "Powfu",
+    "release_date": "2021-02-14",
+    "title": "Death Bed (Coffee For Your Head)"
+  },
+  {
+    "artists": "Diego & Victor Hugo",
+    "release_date": "2021-02-15",
+    "title": "Facas - Ao Vivo"
+  },
+  {
+    "artists": "DJ Ivis",
+    "release_date": "2021-02-16",
+    "title": "Esquema Preferido"
+  },
+  {
+    "artists": "Post Malone",
+    "release_date": "2021-02-17",
+    "title": "Sunflower - Spider-Man: Into The Spider-Verse"
+  },
+  {
+    "artists": "Juice WRLD",
+    "release_date": "2021-02-18",
+    "title": "Lucid Dreams"
+  },
+  {
+    "artists": "Bad Bunny",
+    "release_date": "2021-02-19",
+    "title": "Te Mudaste"
+  },
+  {
+    "artists": "Rusherking",
+    "release_date": "2021-02-20",
+    "title": "Además De Mí - Remix"
+  },
+  {
+    "artists": "Camilo",
+    "release_date": "2021-02-21",
+    "title": "Machu Picchu"
+  },
+  {
+    "artists": "Harry Styles",
+    "release_date": "2021-04-13",
+    "title": "Golden"
+  },
+  {
+    "artists": "Travis Scott",
+    "release_date": "2021-04-14",
+    "title": "Goosebumps"
+  },
+  {
+    "artists": "Harry Styles",
+    "release_date": "2021-04-15",
+    "title": "Adore You"
+  },
+  {
+    "artists": "HVME",
+    "release_date": "2021-04-16",
+    "title": "Goosebumps"
+  },
+  {
+    "artists": "Lady Gaga",
+    "release_date": "2021-03-05",
+    "title": "Shallow"
+  },
+  {
+    "artists": "Shawn Mendes",
+    "release_date": "2021-03-06",
+    "title": "Monster (Shawn Mendes & Justin Bieber)"
+  },
+  {
+    "artists": "Justin Bieber",
+    "release_date": "2021-03-06",
+    "title": "Holy (Feat. Chance The Rapper)"
+  },
+  {
+    "artists": "Roddy Ricch",
+    "release_date": "2021-03-06",
+    "title": "The Box"
+  },
+  {
+    "artists": "Imagine Dragons",
+    "release_date": "2021-03-06",
+    "title": "Believer"
+  },
+  {
+    "artists": "Maroon 5",
+    "release_date": "2021-03-10",
+    "title": "Beautiful Mistakes (Feat. Megan Thee Stallion)"
+  },
+  {
+    "artists": "KAROL G",
+    "release_date": "2021-03-11",
+    "title": "Location"
+  },
+  {
+    "artists": "Gym Class Heroes",
+    "release_date": "2021-03-12",
+    "title": "Cupid'S Chokehold / Breakfast In America"
+  },
+  {
+    "artists": "Jawsh 685",
+    "release_date": "2021-03-13",
+    "title": "Savage Love (Laxed - Siren Beat)"
+  },
+  {
+    "artists": "Drake",
+    "release_date": "2021-03-14",
+    "title": "Laugh Now Cry Later (Feat. Lil Durk)"
+  },
+  {
+    "artists": "Sech",
+    "release_date": "2021-03-15",
+    "title": "Relación - Remix"
+  },
+  {
+    "artists": "Maroon 5",
+    "release_date": "2021-03-05",
+    "title": "Memories"
+  }
+]
