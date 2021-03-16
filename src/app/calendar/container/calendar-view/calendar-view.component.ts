@@ -10,53 +10,51 @@ import { SongsService } from '../../services/songs.service';
 })
 export class CalendarViewComponent implements OnInit {
 
-  dates: Array<Date> = [];
+  firstOfMonth: Date = new Date();
 
-  date = new Date();
+  dates: Array<Date>;
 
   views = ['Monthly', 'Weekly'];
 
-  days = WEEK_DAYS;
-
   selectedView = 'Monthly';
 
+  days = WEEK_DAYS;
 
-  constructor(private songsService: SongsService) {
-    this.songsService.getSongs();
-    this.dates = this.getCalendarDays(this.date);
+  constructor(private songService: SongsService) {
+    this.songService.getSongs();
+    this.setMonth(0);
   }
 
   ngOnInit(): void {
   }
 
-  setMonth(inc: number): void {
-    const [year, month] = [this.date.getFullYear(), this.date.getMonth()];
-    this.date = new Date(year, month + inc, 1);
-    this.dates = this.getCalendarDays(this.date);
+  setMonth(monthOffset: number, refDate = this.firstOfMonth): void {
+    this.firstOfMonth = new Date(refDate.getFullYear(), refDate.getMonth() + monthOffset, 1);
+    this.dates = this.getCalendarDays(this.firstOfMonth);
   }
   
   isSameMonth(date: Date): boolean {
-    return date.getMonth() === this.date.getMonth();
+    return date.getMonth() === this.firstOfMonth.getMonth();
   }
 
   private getCalendarDays(date: Date) {
-    const calendarStartTime =  this.getCalendarStartDay(date).getTime();
+    const startDay = this.getCalendarStartDay(date);
+    const startTime =  new Date(startDay.valueOf()).getTime();
 
-    return this.range(0, 41)
-      .map(num => new Date(calendarStartTime + DAY_MS * num));
+    return this.range(0, 34).map(num => new Date(startTime + DAY_MS * num));
   }
 
   private getCalendarStartDay(date: Date): Date {
-    const [year, month] = [date.getFullYear(), date.getMonth()];
-    const firstDayOfMonth = new Date(year, month, 1).getTime();
-
-    return this.range(1,7)
-      .map(num => new Date(firstDayOfMonth - DAY_MS * num))
-      .find(dt => dt.getDay() === 0)
+    const firstOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+    return new Date(firstOfMonth.getTime() - DAY_MS * firstOfMonth.getDay());
   }
 
   private range(start, end, length = end - start + 1) {
     return Array.from({ length }, (_, i) => start + i)
   }
+
+  deleteSong(index: number, date: Date): void {
+    this.songService.deleteSong(index, date);
+}
 
 }

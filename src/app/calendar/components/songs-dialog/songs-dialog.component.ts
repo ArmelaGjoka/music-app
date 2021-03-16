@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, Inject } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { Song } from '../../models/song.model';
 
@@ -10,6 +10,8 @@ import { Song } from '../../models/song.model';
 })
 export class SongsDialogComponent {
 
+  @Output() deleteSongByIndex = new EventEmitter<number>();
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: Song[]) {
   }
 
@@ -18,7 +20,8 @@ export class SongsDialogComponent {
   }
 
   delete(index: number): void {
-    this.data.splice(index, 1);
+    this.deleteSongByIndex.emit(index);
+    //    this.data.splice(index, 1);
   }
 
 }

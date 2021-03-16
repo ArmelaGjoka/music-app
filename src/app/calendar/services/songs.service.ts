@@ -19,20 +19,26 @@ export class SongsService {
           )  
         ).subscribe(data => {
                 (data as Song[]).forEach(song => {
-                    const stringDate = song.release_date + "";
+                    const stringDate = song.release_date;
                     if (!this.songsData[stringDate]) {
                         this.songsData[stringDate] = [];
                     }
                     this.songsData[stringDate] = [...this.songsData[stringDate], song];
                 });
+               // console.log('Result: ', this.songsData);
     })}
 
-    getSongsByDate(date: Date) {
-        const dateString = date.getFullYear() + "-" + this.numberToString(date.getUTCMonth() + 1) + "-" + this.numberToString(date.getUTCDay() + 1);
+    getSongsByDate(date: Date): Song[] | null { 
+        const dateString = date.getFullYear() + "-" + this.numberToString(date.getMonth() + 1) + "-" + this.numberToString(date.getDate());
         return this.songsData[dateString];
     }
 
     private numberToString(value: number): string {
-        return value / 10 === 1 ? value.toString() : '0' + value;
+        return value / 10 >= 1 ? value.toString() : '0' + value;
+    }
+
+    deleteSong(index: number, date: Date): void {
+        const dateString = date.getFullYear() + "-" + this.numberToString(date.getMonth() + 1) + "-" + this.numberToString(date.getDate());
+        this.songsData[dateString].splice(index);
     }
 }
