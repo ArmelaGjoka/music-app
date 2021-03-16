@@ -34,7 +34,7 @@ export class LoginComponent  {
     .pipe(first())
     .subscribe(
         data => {
-            this.router.navigate(['/temp']);
+            this.router.navigate(['/calendar']);
         },
         error => {
             console.log('Error: ', error);
