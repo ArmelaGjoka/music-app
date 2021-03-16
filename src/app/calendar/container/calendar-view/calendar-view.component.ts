@@ -10,8 +10,10 @@ import { SongsService } from '../../services/songs.service';
 })
 export class CalendarViewComponent implements OnInit {
 
-  firstOfMonth: Date = new Date();
+  // The first day of week or month being shown
+  firstDate: Date;
 
+  // The dates of week or month being shown
   dates: Array<Date>;
 
   views = ['Monthly', 'Weekly'];
@@ -22,26 +24,39 @@ export class CalendarViewComponent implements OnInit {
 
   constructor(private songService: SongsService) {
     this.songService.getSongs();
-    this.setMonth(0);
+    this.update(0, new Date());
   }
 
   ngOnInit(): void {
   }
 
-  setMonth(monthOffset: number, refDate = this.firstOfMonth): void {
-    this.firstOfMonth = new Date(refDate.getFullYear(), refDate.getMonth() + monthOffset, 1);
-    this.dates = this.getCalendarDays(this.firstOfMonth);
+  update(offset = 0, refDate = this.firstDate): void {
+    if (this.selectedView === 'Monthly') {
+      this.firstDate = new Date(refDate.getFullYear(), refDate.getMonth() + offset, 1);
+      this.dates = this.getCalendarMonthlyDays(this.firstDate);
+    } else {
+      const daysOffset = refDate.getDay() - offset * 7;
+      this.firstDate = new Date(refDate.getTime() - DAY_MS * daysOffset);
+      this.dates = this.getCalendarWeeklyDays(this.firstDate);
+    }
+
   }
   
   isSameMonth(date: Date): boolean {
-    return date.getMonth() === this.firstOfMonth.getMonth();
+    return date.getMonth() === this.firstDate.getMonth();
   }
 
-  private getCalendarDays(date: Date) {
+  private getCalendarMonthlyDays(date: Date) {
     const startDay = this.getCalendarStartDay(date);
     const startTime =  new Date(startDay.valueOf()).getTime();
 
     return this.range(0, 34).map(num => new Date(startTime + DAY_MS * num));
+  }
+
+  private getCalendarWeeklyDays(date: Date) {
+    const startTime =  new Date(date.valueOf()).getTime();
+
+    return this.range(0, 6).map(num => new Date(startTime + DAY_MS * num));
   }
 
   private getCalendarStartDay(date: Date): Date {
@@ -55,6 +70,10 @@ export class CalendarViewComponent implements OnInit {
 
   deleteSong(index: number, date: Date): void {
     this.songService.deleteSong(index, date);
-}
+  }
+
+  viewChanged() {
+    this.update();
+  }
 
 }

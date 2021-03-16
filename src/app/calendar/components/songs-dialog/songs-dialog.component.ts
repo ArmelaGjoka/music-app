@@ -21,7 +21,6 @@ export class SongsDialogComponent {
 
   delete(index: number): void {
     this.deleteSongByIndex.emit(index);
-    //    this.data.splice(index, 1);
   }
 
 }

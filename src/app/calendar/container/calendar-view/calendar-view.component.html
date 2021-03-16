@@ -1,11 +1,11 @@
 <div>
-   <button (click)="setMonth(-1)">&lt;</button>
-      {{firstOfMonth | date}}
-   <button (click)="setMonth(+1)">&gt;</button>
+   <button (click)="update(-1)">&lt;</button>
+      {{firstDate | date}}
+   <button (click)="update(+1)">&gt;</button>
    <div> 
       <mat-form-field appearance="fill">
          <mat-label>View</mat-label>
-         <mat-select [(ngModel)]="selectedView">
+         <mat-select [(ngModel)]="selectedView" (selectionChange)="viewChanged()">
             <mat-option *ngFor="let view of views" [value]="view">
             {{view}}
             </mat-option>
