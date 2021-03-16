@@ -10,10 +10,7 @@
             <div mat-line>{{song.title}}
               <button mat-icon-button (click)="delete(index)"><mat-icon>delete</mat-icon></button>
             </div>
-           <div
-            *ngFor="let artist of song.artists"
-            mat-line
-           >{{artist}}</div>
+           <div mat-line>{{song.artists | concat:' feat '}}</div>
         </mat-list-item>
       </div>
 </ng-container>

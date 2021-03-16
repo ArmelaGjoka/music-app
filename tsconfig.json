@@ -30,6 +30,12 @@
       ],
       "authentication/*": [
         "dist/authentication/*"
+      ],
+      "shared": [
+        "dist/shared"
+      ],
+      "shared/*": [
+        "dist/shared/*"
       ]
     }
   },
