@@ -1,16 +1,23 @@
 
 <h1 mat-dialog-title>Songs released</h1>
-<ng-container *ngIf="data.length == 0">
-    No song was released on this day!
-</ng-container>
-<ng-container *ngIf="data && data.length > 0">
-    <div mat-dialog-content cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-        <mat-list-item class="example-box" *ngFor="let song of data; index as index" cdkDrag>
-          <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-            <div mat-line>{{song.title}}
-              <button mat-icon-button (click)="delete(index)"><mat-icon>delete</mat-icon></button>
-            </div>
-           <div mat-line>{{song.artists | concat:' feat '}}</div>
-        </mat-list-item>
+
+
+<div class="container" *ngIf="data && data.length > 0; else noSongsBlock">
+  <div mat-dialog-content cdkDropList class="song-list" (cdkDropListDropped)="drop($event)">
+    <div class="song-box" *ngFor="let song of data; index as index" cdkDrag>
+      <div fxLayout="row" fxLayoutAlign="space-around center" class="song-custom-placeholder" *cdkDragPlaceholder></div>
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+          <div><strong>{{song.title}}</strong></div>
+          <div>{{song.artists | concat:' feat '}}</div>
+        </div>
+       <div fxLayout="row">
+       <button mat-icon-button (click)="delete(index)"><mat-icon>delete</mat-icon></button>
       </div>
-</ng-container>
+    </div>
+  </div>
+</div>
+<ng-template #noSongsBlock>
+  <p>
+    No song are found for this day!
+  </p>
+</ng-template>
