@@ -10,6 +10,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './not-found/not-found.component'
 import { MatButtonModule } from '@angular/material';
 
+export const INITIAL_PAGE = 'calendar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,7 @@ import { MatButtonModule } from '@angular/material';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    AuthenticationModule,
+    AuthenticationModule.forRoot(INITIAL_PAGE),
     MatButtonModule
   ],
   providers: [

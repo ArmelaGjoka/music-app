@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
@@ -15,8 +15,10 @@ export class LoginComponent  {
 
   error: string = null;
 
-  constructor(private authService: AuthenticationService,
-              private router: Router) {
+  constructor(
+      private authService: AuthenticationService,
+      private router: Router,
+      @Inject('config') private config: string) {
     this.loginForm = new FormGroup({
         username: new FormControl(null, Validators.required),
         password: new FormControl(null, Validators.required)
@@ -29,19 +31,16 @@ export class LoginComponent  {
         return;
     }
     const user = this.loginForm.value;
-    // FIXME: Remove the logic to app
     this.authService.login(user)
     .pipe(first())
     .subscribe(
-        data => {
-            this.router.navigate(['/calendar']);
-        },
-        error => {
-            console.log('Error: ', error);
-            this.error = error;
-        });
-  }
-
+      data => {
+          this.router.navigate([this.config]);
+      },
+      error => {
+          this.error = error;
+      });
+    }
   isControlInvalid(controlName: string): boolean {
      const control = this.loginForm.get(controlName);
      return control.touched && control.invalid;

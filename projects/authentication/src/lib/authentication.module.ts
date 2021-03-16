@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { LoginComponent } from './components/login/login.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -16,7 +16,9 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
       ReactiveFormsModule,
       MatFormFieldModule,
       MatInputModule,
-      HttpClientModule
+      HttpClientModule,
+      MatButtonModule,
+      MatCardModule
   ],
   declarations: [
       LoginComponent
@@ -26,4 +28,11 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
   ]
 })
-export class AuthenticationModule { }
+export class AuthenticationModule {
+    static forRoot(config: any): ModuleWithProviders {
+        return {
+          ngModule: AuthenticationModule,
+          providers: [{provide: 'config', useValue: config}]
+        };
+      }
+}
